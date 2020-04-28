@@ -43,11 +43,12 @@ class Indicator extends AnimatedWidget {
       height: 26,
       width: 26,
       child: Center(
-        child: Container(
+        child: AnimatedContainer(
           margin: EdgeInsets.all(5),
           color: color,
           width: w,
           height: h,
+          duration: Duration(milliseconds: 300),
         ),
       ),
     );
