@@ -1,4 +1,4 @@
-# flutterintroslider
+# Flutter Intro Slider
 
 A new Flutter application.
 
