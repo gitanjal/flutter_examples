@@ -43,7 +43,7 @@ class MyAppState extends State{
               itemBuilder: (BuildContext context, int index) {
                 bool showSkip = true;
                 if (index == 2) showSkip = false;
-                return EachPage(messages[index], images[index], showSkip);
+                return EachPage(messages[index], images[index]);
               },
             ),
             Align(
