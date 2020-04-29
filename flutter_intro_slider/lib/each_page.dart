@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
 
-class EachPage extends StatefulWidget {
+class EachPage extends StatelessWidget {
 
-  String message;
-  String image;
-  bool showSkip;
+  final String message;
+  final String image;
 
-  EachPage(this.message, this.image, this.showSkip);
+  EachPage(this.message, this.image);
 
-  @override
-  _EachPageState createState() => _EachPageState();
-
-}
-
-class _EachPageState extends State<EachPage> {
   @override
   Widget build(BuildContext context) {
 
@@ -25,11 +18,11 @@ class _EachPageState extends State<EachPage> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Image.asset(
-                widget.image,
+                image,
                 fit: BoxFit.scaleDown,
                 width: 200,
                 height: 200,),
-              Text(widget.message)
+              Text(message)
             ],
           ),
         ),
