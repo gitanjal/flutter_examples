@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="GEN_FOLDER_RELATIVE_PATH_APT" value="/../../flutter_examples/gen" />
+        <option name="GEN_FOLDER_RELATIVE_PATH_AIDL" value="/../../flutter_examples/gen" />
+        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/../../flutter_examples/AndroidManifest.xml" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/../../flutter_examples/res" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/../../flutter_examples/assets" />
+        <option name="LIBS_FOLDER_RELATIVE_PATH" value="/../../flutter_examples/libs" />
+        <option name="PROGUARD_LOGS_FOLDER_RELATIVE_PATH" value="/../../flutter_examples/proguard_logs" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" generated="true" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_auth_example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_auth_example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_intro_slider/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_intro_slider/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_splash_screen/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_splash_screen/build" />
+    </content>
+    <orderEntry type="jdk" jdkName="Android API 7 Platform" jdkType="Android SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
