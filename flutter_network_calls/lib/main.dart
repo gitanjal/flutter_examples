@@ -31,9 +31,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-  var responseBody='';
-  bool isLoading=false;
+  var responseBody = '';
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -46,14 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-
               /*
               * Button to get all tasks
               * */
               TextButton(
                   onPressed: () async {
                     setState(() {
-                      isLoading=true;
+                      isLoading = true;
                     });
 
                     var response = await http
@@ -61,8 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     print(response.body);
 
                     setState(() {
-                      isLoading=false;
-                      responseBody=response.body;
+                      isLoading = false;
+                      responseBody = response.body;
                     });
                   },
                   child: Text('Get request(All Items)')),
@@ -73,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
               TextButton(
                   onPressed: () async {
                     setState(() {
-                      isLoading=true;
+                      isLoading = true;
                     });
 
                     var response = await http
@@ -81,8 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     print(response.body);
 
                     setState(() {
-                      isLoading=false;
-                      responseBody=response.body;
+                      isLoading = false;
+                      responseBody = response.body;
                     });
                   },
                   child: Text('Get request(Single Item by ID)')),
@@ -93,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
               TextButton(
                   onPressed: () async {
                     setState(() {
-                      isLoading=true;
+                      isLoading = true;
                     });
 
                     Map<String, String> headers = {
@@ -106,17 +104,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       'completed': 'false'
                     };
 
-
-                    var response = await http
-                        .post('https://jsonplaceholder.typicode.com/todos',
-                        headers:headers,
-                        body: jsonEncode(dataToSend)
-                    );
+                    var response = await http.post(
+                        'https://jsonplaceholder.typicode.com/todos',
+                        headers: headers,
+                        body: jsonEncode(dataToSend));
                     print(response.body);
 
                     setState(() {
-                      isLoading=false;
-                      responseBody=response.body;
+                      isLoading = false;
+                      responseBody = response.body;
                     });
                   },
                   child: Text('Post request(Add a Todo)')),
@@ -124,52 +120,54 @@ class _MyHomePageState extends State<MyHomePage> {
               /*
               * Button to update a task
               * */
-              TextButton(onPressed: () async {
+              TextButton(
+                  onPressed: () async {
+                    setState(() {
+                      isLoading = true;
+                    });
 
-                setState(() {
-                  isLoading=true;
-                });
+                    Map<String, String> headers = {
+                      'Content-Type': 'application/json; charset=UTF-8',
+                    };
 
-                Map<String, String> headers = {
-                  'Content-Type': 'application/json; charset=UTF-8',
-                };
+                    Map<String, String> dataToSend = {
+                      'title': 'Hello World',
+                      'completed': 'false'
+                    };
 
-                Map<String, String> dataToSend = {
-                  'title': 'Hello World',
-                  'completed': 'false'
-                };
+                    var response = await http.put(
+                        'https://jsonplaceholder.typicode.com/todos/2',
+                        headers: headers,
+                        body: jsonEncode(dataToSend));
+                    print(response.body);
 
-
-                var response = await http.put('https://jsonplaceholder.typicode.com/todos/2',
-                    headers:headers,
-                    body: jsonEncode(dataToSend)
-                );
-                print(response.body);
-
-                setState(() {
-                  isLoading=false;
-                  responseBody=response.body;
-                });
-              }, child: Text('Put request(Update a Todo)')),
+                    setState(() {
+                      isLoading = false;
+                      responseBody = response.body;
+                    });
+                  },
+                  child: Text('Put request(Update a Todo)')),
 
               /*
               * Button to delete a task
               * */
-              TextButton(onPressed: () async {
-                setState(() {
-                  isLoading=true;
-                });
+              TextButton(
+                  onPressed: () async {
+                    setState(() {
+                      isLoading = true;
+                    });
 
-                var response = await http.delete('https://jsonplaceholder.typicode.com/todos/2'
-                );
-                print(response.body);
+                    var response = await http
+                        .delete('https://jsonplaceholder.typicode.com/todos/2');
+                    print(response.body);
 
-                setState(() {
-                  isLoading=false;
-                  responseBody=response.body;
-                });
-              }, child: Text('Delete request( Delete a Todo)')),
-              (isLoading)?CircularProgressIndicator():Text(responseBody)
+                    setState(() {
+                      isLoading = false;
+                      responseBody = response.body;
+                    });
+                  },
+                  child: Text('Delete request( Delete a Todo)')),
+              (isLoading) ? CircularProgressIndicator() : Text(responseBody)
             ],
           ),
         ),

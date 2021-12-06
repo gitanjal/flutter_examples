@@ -36,14 +36,11 @@ class _AppState extends State<App> {
 
           setState(() {
             _isLoggedIn = true;
-            _user=user;
+            _user = user;
             //     _name = user.displayName;
           });
         }
-      }
-      );
-
-
+      });
     } catch (e) {
       // Set `_error` state to true if Firebase initialization fails
       setState(() {
@@ -68,7 +65,9 @@ class _AppState extends State<App> {
     return MaterialApp(
       home: (_initialized)
           ? ((_isLoggedIn)
-              ? MyHomePage(title: _user.displayName,)
+              ? MyHomePage(
+                  title: _user.displayName,
+                )
               : LoginScreen())
           : LoadingScreen(),
     );
@@ -81,7 +80,6 @@ class LoadingScreen extends StatelessWidget {
     return Center(child: CircularProgressIndicator());
   }
 }
-
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -124,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           FirebaseAuth.instance.signOut();
-         /* Navigator.pushAndRemoveUntil(
+          /* Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(builder: (context) => LoginScreen()),
               (route) => false);*/
